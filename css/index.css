@@ -1,3 +1,12 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
 .page {
     font-family        : Helvetica, arial, sans-serif;
     max-width          : 1200px;
@@ -12,7 +21,13 @@
 }
 
 .header {
-    grid-area: header-cell;
+    display            : flex;
+    display            : grid;
+    grid-area          : header-cell;
+    grid-template-areas: 'logo nav search';
+    padding            : 0px;
+    margin             : 0px;
+    align-items        : center;
 }
 
 .main {
@@ -20,16 +35,12 @@
 }
 
 .footer {
-    grid-area: footer-cell;
-}
+    grid-area          : footer-cell;
+    display            : grid;
+    grid-template-areas: "thongtin""diachi";
+    justify-content    : center;
+    background-color   : #333333;
 
-* {
-    margin : 0;
-    padding: 0;
-}
-
-p {
-    margin: 0;
 }
 
 .content-center,
@@ -112,7 +123,7 @@ p {
     color      : #fff;
 }
 
-/* ---------------------------------------------------------------------------- */
+/* --------------------------------------------------------- */
 
 .noteworthy {
     display            : grid;
@@ -178,8 +189,7 @@ p {
     display            : grid;
     grid-template-areas: 'image title'
         'image content';
-    grid-template-columns: 4fr 6fr;
-    grid-template-rows   : 1fr 5fr;
+    grid-template-columns: 2fr 6fr;
     grid-gap             : 10px;
     margin               : 20px 0;
 }
@@ -279,10 +289,7 @@ p {
     outline         : none;
 }
 
-.login__form--input-text:hover {
-    border: 1px solid #33cc33;
-}
-
+.login__form--input-text:hover,
 .login__form--input-text:focus {
     border: 1px solid #33cc33;
 }
@@ -389,21 +396,20 @@ p {
     position        : absolute;
     background-color: #D8D9CF;
     opacity         : 0.8;
+    top             : 220px;
+}
+
+.control-prev {
+    left: 0;
+}
+
+.control-next {
+    right: 0;
 }
 
 .control-prev i,
 .control-next i {
     color: black;
-}
-
-.control-prev {
-    left: 0;
-    top : 220px;
-}
-
-.control-next {
-    right: 0;
-    top  : 220px;
 }
 
 .control-prev:hover,
@@ -452,24 +458,499 @@ p {
     font-weight         : 500;
 }
 
-/*responsive -------------------------------------------------------- */
+/*responsive ---------------------------------------------------- */
+
+/* tablet: width >= 740px and width < 1024px*/
+
+/* @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .page {}
+
+    .noteworthy {
+        display: none;
+    }
+
+    .newest {
+        margin: 0 10px;
+    }
+}
 
 /* mobile < 740px */
-@media only screen and (max-width: 46.1875em) {
+
+/* @media only screen and (max-width: 46.1875em) {
     .page {
         background-color: red;
     }
 
-    .suggest,
-    .suggest__title {
+    .noteworthy {
         display: none;
     }
+
+    .newest {
+        margin: 0 10px;
+    }
+
+    .newest__items--content {
+        font-size: 0.6em;
+    }
+
+    .newest__items--title {
+        font-size: 1em;
+    }
+} */
+
+/* ----------------------------------------------------------------------------- */
+
+#logo {
+    width      : 50px;
+    grid-area  : logo;
+    align-items: center;
 }
 
-/* tablet: width >= 740px and width < 1024px*/
+.nav-pc {
+    display    : flex;
+    align-items: center;
+    padding    : 0;
+    grid-area  : nav;
+}
 
-@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-    .page {
-        background-color: #33cc33;
+#main-menu {
+    display        : flex;
+    max-width      : 100%;
+    list-style-type: none;
+}
+
+nav #main-menu li a {
+    display        : block;
+    color          : aliceblue;
+    text-decoration: none;
+    padding        : 8px 15px;
+    justify-content: space-between;
+    font-size      : 15px;
+}
+
+nav #main-menu li:hover a {
+    background-color: red;
+    transition      : all 0.3s;
+}
+
+#menu {
+    display  : none;
+    padding  : 10px;
+    font-size: 20px;
+    color    : #fff;
+    grid-area: logo;
+    cursor   : pointer;
+    /* Hiện bàn tay */
+}
+
+/* ------------------------new---------------------- */
+.nav-overlay {
+    position        : fixed;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display         : none;
+    animation       : fadein linear 0.5s;
+    /*linear        : truot deu*/
+}
+
+@keyframes fadein {
+    form {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
+
+.nav-mobie {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    bottom          : 0;
+    width           : 200px;
+    max-width       : 100%;
+    background-color: #fff;
+    transform       : translateX(-100%);
+    opacity         : 0;
+    /* trong suot*/
+    transition      : all linear 0.5s;
+    height          : 350px;
+}
+
+#nav__mobie-list {
+    margin-top     : 40px;
+    text-align     : center;
+    list-style-type: none;
+    /*bỏ ki hieu danh sach*/
+}
+
+.nav-mobie #nav__mobie-list li:hover a {
+    background-color: red;
+    transition      : all 0.3s;
+}
+
+.nav_mobie-link {
+    color          : #333;
+    display        : block;
+    padding        : 8px 0;
+    text-decoration: none;
+}
+
+#nav__mobile-list li a {
+    text-decoration: none;
+}
+
+.nav_mobie-close {
+    font-size: 1.4rem;
+    color    : #666;
+    position : absolute;
+    top      : 1rem;
+    right    : 1rem;
+}
+
+.nav-input:checked~.nav-mobie {
+    transform: translateX(0%);
+    opacity  : 1;
+}
+
+/* ---------------------------start search ------------------------------*/
+
+.main__search {
+    grid-area    : search;
+    box-sizing   : border-box;
+    background   : #fff;
+    height       : 34px;
+    border-radius: 20px;
+    width        : 260px;
+    /* border    : 2px solid yellow; */
+}
+
+.search__box {
+    height         : 50px;
+    justify-content: right;
+    padding-left   : 5px;
+}
+
+.search__text {
+    height          : 30px;
+    width           : 200px;
+    background-color: #fff;
+    border          : none;
+    justify-content : center;
+    border-radius   : 20px;
+    outline         : none;
+    font-size       : 20px;
+    padding-left    : 5px;
+}
+
+.search__btn {
+    height          : 25px;
+    background-color: #fff;
+    padding         : 0 10px;
+    border          : none;
+    cursor          : pointer;
+}
+
+.nav-input:checked~.nav-overlay {
+    display: block;
+}
+
+.nav-input {
+    display: none;
+}
+
+/* ---------------------------end search ------------------------------*/
+
+/* ---------------------------start reponsive header ------------------------------*/
+@media screen and (max-width: 860px) {
+    #main-menu {
+        flex-direction: column;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+        width  : 20px;
+    }
+
+    .page_header {
+        justify-content: space-between;
+    }
+
+    .main__search {
+        width: 260px;
+    }
+
+    .slider_img {
+        width: 100%;
+    }
+
+    .nav-pc {
+        display: none;
+    }
+
+    .nav-mobie {
+        display: block;
+    }
+}
+
+/* ---------------------------end reponsive header ------------------------------*/
+
+
+/* --------------------------------------end Header-------------------------------------- */
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------start main------------------------------------------- */
+
+/* -------------------------start banner-------------------------------- */
+
+.slider_banner {
+    width   : 100%;
+    overflow: hidden;
+}
+
+.slider_img {
+    box-sizing: border-box;
+    display   : flex;
+    animation : slideshow 12s infinite;
+    max-height: 422px;
+    width     : 100%;
+}
+
+.slider_img img {
+    width: 100%;
+}
+
+@keyframes slideshow {
+    25% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: -100%;
+    }
+
+    75% {
+        margin-left: -200%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
+/* ------------------------- end banner-------------------------------- */
+
+
+/*-------------------------------start section--------------------------- */
+
+.section_container {
+    /*section*/
+    width  : 100%;
+    display: flex;
+}
+
+h2 {
+    text-align   : center;
+    padding      : 2% 0;
+    margin-bottom: 0;
+}
+
+.sanpham {
+    width           : 25%;
+    padding         : 0 16px;
+    margin          : 10px;
+    color           : #9e9eff;
+    font-size       : 14px;
+    line-height     : 18px;
+    padding         : 0 10px 0px 10px;
+    height          : 100%;
+    justify-content : center;
+    border-radius   : 10%;
+    background-color: rgb(35, 33, 33);
+    align-items     : center;
+}
+
+.sanpham_img {
+    width  : 100%;
+    padding: 10px 0;
+}
+
+.thongtin {
+    margin-bottom : 0;
+    padding-bottom: 10px;
+    color         : black;
+    font-family   : Helvetica;
+    text-align    : center;
+}
+
+
+.tensp {
+    font-size : 100%;
+    color     : aliceblue;
+    box-sizing: border-box;
+}
+
+.GiaSP {
+    font-size      : 100%;
+    color          : aliceblue;
+    justify-content: center;
+}
+
+p {
+    display       : flex;
+    font-size     : 10px;
+    text-align    : left;
+    padding-bottom: 0px;
+    margin-bottom : 16px;
+}
+
+.title {
+    background-color: black;
+    border-radius   : 20px;
+    margin          : 10px 0px;
+    color           : white;
+}
+
+#button {
+    border-style    : solid;
+    border-width    : 2px;
+    border-radius   : 10px;
+    padding         : 3% 10%;
+    margin          : 0px;
+    line-height     : 24px;
+    text-decoration : none;
+    background-color: #0d6efd;
+    color           : aliceblue;
+    font-size       : 10px;
+}
+
+
+/*-------------------------------end section--------------------------- */
+
+
+/* -----------------------------start reponsive section--------------------------- */
+
+@media only screen and (max-width: 46.1875em) {
+    .section_container {
+        flex-wrap: wrap;
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+
+/* -----------------------------end reponsive section--------------------------- */
+
+/*------------------------------------------------------ start footer ------------------------------------------------------------*/
+
+
+.lienhe {
+    display        : flex;
+    margin         : 20px 0;
+    justify-content: center;
+}
+
+.vechungtoi {
+    grid-area: thongtin;
+    margin   : 0 20px;
+}
+
+.thongtin_footer {
+    grid-area: diachi;
+}
+
+.tt-footer {
+    display: flex;
+    margin : 10px;
+}
+
+.tt-footer i {
+    margin-right: 10px;
+}
+
+.vechungtoi h5 {
+    margin: 10px 0;
+}
+
+.logolienhe a i {
+    display         : block;
+    background-color: #fff;
+    margin          : 0 5px;
+    padding         : 2px;
+    border-radius   : 100%;
+}
+
+.logolienhe {
+    display: flex;
+}
+
+/*------------------------------------------------------ end footer ------------------------------------------------------------*/
+
+
+
+/*-------------------------------start support -------------------------------*/
+#support {
+    display            : grid;
+    display            : flex;
+    grid-template-areas: 'form''img';
+    justify-content    : center;
+    background-color   : #fff;
+    margin-top         : 2px;
+}
+
+.bannersuppor {
+    width : 100%;
+    height: 400px;
+}
+
+.formsupport {
+    grid-area   : form;
+    color       : #333333;
+    margin-right: 20px;
+    padding     : 0 20px;
+
+    width: 50%;
+}
+
+.formsupport input {
+    margin: 20px 0;
+    width : 100%;
+    height: 40px;
+}
+
+.message {
+    height: 100px;
+}
+
+.btn-support {
+    padding         : 8px 40px;
+    background-color: yellow;
+    cursor          : pointer;
+    margin-bottom   : 20px;
+}
+
+.img {
+    grid-area: img;
+}
+
+.img img {
+    width : 100%;
+    height: 430px;
+}
+
+/*-------------------------------end support -------------------------------*/
