@@ -1,0 +1,115 @@
+.main__login {
+    background-color   : #3e3e3f;
+    border             : 2px solid #989898;
+    border-radius      : 5px;
+    width              : 900px;
+    margin             : 150px auto;
+    display            : grid;
+    grid-template-areas: 'top-cell top-cell'
+        'left-cell right-cell';
+    row-gap: 20px;
+}
+
+.title-login {
+    grid-area : top-cell;
+    text-align: center;
+    width     : 900px;
+}
+
+.logo--apple {
+    width: 200px;
+}
+
+.main__login--qr {
+    text-align: center;
+    grid-area : right-cell;
+}
+
+.main__login-form {
+    grid-area: left-cell;
+
+}
+
+.login__qr--img {
+    width: 250px;
+}
+
+.h2__login-qr {
+    margin: 15px 0px;
+    color : #fff;
+}
+
+.page--background {
+    background-color: #202225;
+}
+
+.login__form {
+    width       : 400px;
+    margin-left : auto;
+    margin-right: auto;
+}
+
+.login__form--label {
+    font-size : 20px;
+    color     : #fff;
+    display   : block;
+    margin-top: 20px;
+}
+
+.login__form--input-text {
+    width           : 400px;
+    height          : 40px;
+    border-radius   : 5px;
+    background-color: #202225;
+    border          : 1px solid #202225;
+    opacity         : 0.5;
+    color           : #fff;
+    font-size       : 20px;
+    outline         : none;
+}
+
+.login__form--input-text:hover,
+.login__form--input-text:focus {
+    border: 1px solid #33cc33;
+}
+
+.login__form--input-button {
+    width           : 400px;
+    height          : 40px;
+    background-color: #5a6df2;
+    color           : #fff;
+    border          : none;
+    display         : block;
+    margin-top      : 20px;
+}
+
+.forgot-password {
+    text-decoration: none;
+    font-size      : 15px;
+    margin-top     : 5px;
+    display        : block;
+}
+
+.create__acount {
+    color     : #fff;
+    margin-top: 5px;
+    font-size : 15px;
+}
+
+.link-regidter {
+    color    : #3f9fdb;
+    font-size: 15px;
+    margin   : 0;
+}
+
+.forgot-password:hover,
+.link-regidter:hover {
+    color: red;
+}
+
+/*responsive */
+/* tablet: width >= 740px and width < 1024px*/
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+
+/* mobile < 740px */
+@media only screen and (max-width: 46.1875em) {}

@@ -1,0 +1,165 @@
+.banner_accessory {
+    width : 100%;
+    margin: 0;
+}
+
+.suggest {
+    position: relative;
+}
+
+.slider {
+    display: flex;
+}
+
+.slider .card {
+    flex  : 0 0 24%;
+    margin: 5px;
+}
+
+.accessories {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width       : 100%;
+    border          : 1px solid black;
+    border-radius   : 20px;
+    display         : block;
+    width           : 24%;
+    margin          : 5px;
+    background-color: #323232;
+}
+
+.card-img-top {
+    max-width: 100%;
+}
+
+.card-body {
+    height: 150px;
+}
+
+.card-footer {
+    text-align: end;
+    height    : 70px;
+}
+
+.card-title {
+    color     : white;
+    text-align: center;
+    font-size : 20px;
+    height    : 50px;
+}
+
+.card-text {
+    font-size  : 16px;
+    margin     : 5px;
+    text-align : justify;
+    color      : #D8D9CF;
+    font-weight: 500;
+}
+
+.card:hover {
+    border: 1px solid white;
+}
+
+.control-prev,
+.control-next {
+    width           : 70px;
+    height          : 70px;
+    border          : 1px solid black;
+    border-radius   : 50%;
+    position        : absolute;
+    background-color: #D8D9CF;
+    opacity         : 0.8;
+    top             : 220px;
+}
+
+.control-prev {
+    left: 0;
+}
+
+.control-next {
+    right: 0;
+}
+
+.control-prev i,
+.control-next i {
+    color: black;
+}
+
+.control-prev:hover,
+.control-next:hover {
+    border: 1px solid green;
+}
+
+@keyframes btn-control-animation-show-next {
+    from {
+        opacity  : 0;
+        transform: translateX(10%);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes btn-control-animation-show-prev {
+    from {
+        opacity  : 1;
+        transform: translateX(-10%);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+.text-muted {
+    padding-bottom: 10px;
+    margin-right  : 15px;
+    display       : block;
+    font-weight   : 1000;
+    color         : beige;
+}
+
+.input_sp {
+    margin          : 0;
+    padding         : 0;
+    height          : 100%;
+    background-color: #D8D9CF;
+    border          : none;
+    border-radius   : 5px 0 0 5px;
+}
+
+.sale {
+    color               : red;
+    text-decoration-line: line-through;
+    font-weight         : 500;
+}
+
+.btn__submit {
+    margin          : 0;
+    margin-right    : 5px;
+    margin-left     : -6px;
+    border-radius   : 0 5px 5px 0;
+    padding         : 0;
+    height          : 100%;
+    border          : none;
+    background-color: yellowgreen;
+    line-height     : 100%;
+    width           : 70px;
+}
+
+.form__order {
+    height: 30px;
+}
+
+/*responsive */
+/* tablet: width >= 740px and width < 1024px*/
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+
+/* mobile < 740px */
+@media only screen and (max-width: 46.1875em) {}

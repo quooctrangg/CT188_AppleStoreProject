@@ -1,0 +1,368 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.page {
+    font-family        : Helvetica, arial, sans-serif;
+    max-width          : 1200px;
+    margin-left        : auto;
+    margin-right       : auto;
+    background-color   : #3e3e3f;
+    font-size          : 1.2em;
+    display            : grid;
+    grid-template-areas: 'header-cell'
+        'main-cell'
+        'footer-cell';
+}
+
+.header {
+    display            : flex;
+    display            : grid;
+    grid-area          : header-cell;
+    grid-template-areas: 'logo nav search';
+    padding            : 0px;
+    margin             : 0px;
+    align-items        : center;
+}
+
+.main {
+    grid-area: main-cell;
+}
+
+.footer {
+    grid-area          : footer-cell;
+    display            : grid;
+    grid-template-areas: "thongtin""diachi";
+    justify-content    : center;
+    background-color   : #333333;
+
+}
+
+.content-center,
+.title-center {
+    text-align: center;
+    color     : #eee;
+}
+
+.link__text {
+    color: #3f9fdb;
+}
+
+.page__title {
+    text-align    : center;
+    color         : white;
+    text-transform: uppercase;
+    padding       : 1px;
+    font-family   : 'Raleway', cursive;
+    font-weight   : 100;
+    position      : relative;
+    background    : linear-gradient(to right, black, #eee, black);
+}
+
+.page__title::before {
+    content    : "";
+    position   : absolute;
+    left       : 50%;
+    top        : -50px;
+    width      : 600px;
+    margin-left: -300px;
+    margin-top : -220px;
+    height     : 600px;
+    background : radial-gradient(50% 50%, ellipse closest-side, #444, black);
+    z-index    : -1;
+}
+
+.page__title a {
+    background     : #202225;
+    display        : block;
+    padding        : 20px;
+    text-decoration: none;
+    letter-spacing : 10px;
+    color          : white;
+    pointer-events : none;
+}
+
+.h2__title {
+    margin-top: 50px;
+    overflow  : hidden;
+    text-align: center;
+    color     : aliceblue;
+}
+
+.h2__title:before,
+.h2__title:after {
+    background-color: red;
+    content         : "";
+    display         : inline-block;
+    height          : 1px;
+    position        : relative;
+    vertical-align  : middle;
+    width           : 50%;
+}
+
+.h2__title:before {
+    right      : 0.5em;
+    margin-left: -50%;
+}
+
+.h2__title:after {
+    left        : 0.5em;
+    margin-right: -50%;
+}
+
+.h3__title {
+    font-family: "Open Sans", "sans-serif";
+    font-weight: 500;
+    line-height: 28px;
+    font-size  : 24px;
+    color      : #fff;
+}
+
+
+/* Header */
+
+#logo {
+    width      : 50px;
+    grid-area  : logo;
+    align-items: center;
+
+}
+
+.nav-pc {
+    display    : flex;
+    align-items: center;
+    padding    : 0;
+    grid-area  : nav;
+}
+
+
+#main-menu {
+    display        : flex;
+    max-width      : 100%;
+    list-style-type: none;
+}
+
+nav #main-menu li a {
+    display        : block;
+    color          : aliceblue;
+    text-decoration: none;
+    padding        : 8px 15px;
+    justify-content: space-between;
+    font-size      : 15px;
+}
+
+nav #main-menu li:hover a {
+    background-color: red;
+    transition      : all 0.3s;
+}
+
+#menu {
+    display  : none;
+    padding  : 10px;
+    font-size: 20px;
+    color    : #fff;
+    grid-area: logo;
+    cursor   : pointer;
+}
+
+/*new*/
+.nav-overlay {
+    position        : fixed;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display         : none;
+    animation       : fadein linear 0.5s;
+}
+
+@keyframes fadein {
+    form {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.nav-mobie {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    bottom          : 0;
+    width           : 200px;
+    max-width       : 100%;
+    background-color: #fff;
+    transform       : translateX(-100%);
+    opacity         : 0;
+    transition      : all linear 0.5s;
+    height          : 350px;
+}
+
+#nav__mobie-list {
+    margin-top     : 40px;
+    text-align     : center;
+    list-style-type: none;
+}
+
+.nav-mobie #nav__mobie-list li:hover a {
+    background-color: red;
+    transition      : all 0.3s;
+}
+
+.nav_mobie-link {
+    color          : #333;
+    display        : block;
+    padding        : 8px 0;
+    text-decoration: none;
+}
+
+#nav__mobile-list li a {
+    text-decoration: none;
+}
+
+.nav_mobie-close {
+    font-size: 1.4rem;
+    color    : #666;
+    position : absolute;
+    top      : 1rem;
+    right    : 1rem;
+}
+
+.nav-input:checked~.nav-mobie {
+    transform: translateX(0%);
+    opacity  : 1;
+}
+
+
+
+/* search */
+
+.main__search {
+    grid-area    : search;
+    box-sizing   : border-box;
+    background   : #fff;
+    height       : 34px;
+    border-radius: 20px;
+    width        : 260px;
+}
+
+.search__box {
+    height         : 50px;
+    justify-content: right;
+    padding-left   : 5px;
+}
+
+.search__text {
+    height          : 30px;
+    width           : 200px;
+    background-color: #fff;
+    border          : none;
+    justify-content : center;
+    border-radius   : 20px;
+    outline         : none;
+    font-size       : 20px;
+    padding-left    : 5px;
+}
+
+.search__btn {
+    height          : 25px;
+    background-color: #fff;
+    padding         : 0 10px;
+    border          : none;
+    cursor          : pointer;
+}
+
+.nav-input:checked~.nav-overlay {
+    display: block;
+}
+
+.nav-input {
+    display: none;
+}
+
+
+/* Footer */
+
+.lienhe {
+    display        : flex;
+    margin         : 20px 0;
+    justify-content: center;
+}
+
+.vechungtoi {
+    grid-area: thongtin;
+    margin   : 0 20px;
+}
+
+.thongtin_footer {
+    grid-area: diachi;
+}
+
+.tt-footer {
+    display: flex;
+    margin : 10px;
+}
+
+.tt-footer i {
+    margin-right: 10px;
+}
+
+.vechungtoi h5 {
+    margin: 10px 0;
+}
+
+.logolienhe a i {
+    display         : block;
+    background-color: #fff;
+    margin          : 0 5px;
+    padding         : 2px;
+    border-radius   : 100%;
+}
+
+.logolienhe {
+    display: flex;
+}
+
+/* reponsive */
+@media screen and (max-width: 860px) {
+    #main-menu {
+        flex-direction: column;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+        width  : 20px;
+    }
+
+    .page_header {
+        justify-content: space-between;
+    }
+
+    .main__search {
+        width: 260px;
+    }
+
+    .slider_img {
+        width: 100%;
+    }
+
+    .nav-pc {
+        display: none;
+    }
+
+    .nav-mobie {
+        display: block;
+    }
+}

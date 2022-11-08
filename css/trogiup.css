@@ -1,0 +1,56 @@
+#support {
+    display            : grid;
+    display            : flex;
+    grid-template-areas: 'form''img';
+    justify-content    : center;
+    background-color   : #fff;
+    margin-top         : 2px;
+}
+
+.bannersuppor {
+    width : 100%;
+    height: 400px;
+}
+
+.formsupport {
+    grid-area   : form;
+    color       : #333333;
+    margin-right: 20px;
+    padding     : 0 20px;
+
+    width: 50%;
+}
+
+.formsupport input {
+    margin: 20px 0;
+    width : 100%;
+    height: 40px;
+}
+
+.message {
+    height: 100px;
+}
+
+.btn-support {
+    padding         : 8px 40px;
+    background-color: yellow;
+    cursor          : pointer;
+    margin-bottom   : 20px;
+}
+
+.img {
+    grid-area: img;
+}
+
+.img img {
+    width : 100%;
+    height: 430px;
+}
+
+
+/*responsive */
+/* tablet: width >= 740px and width < 1024px*/
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+
+/* mobile < 740px */
+@media only screen and (max-width: 46.1875em) {}
