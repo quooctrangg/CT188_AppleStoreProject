@@ -1,23 +1,19 @@
 .noteworthy {
     display            : grid;
-    grid-template-areas: 'left-top-cell right_top-cell'
-        'left-bottom-cell right_bottom-cell';
+    grid-template-areas: 'left-cell right-top-cell'
+        'left-cell right-bottom-cell';
 }
 
-.link--img-left-top {
-    grid-area: left-top-cell;
-}
-
-.link--img-left-bottom {
-    grid-area: left-bottom-cell;
+.link--img-left {
+    grid-area: left-cell;
 }
 
 .link--img-right-top {
-    grid-area: right_top-cell;
+    grid-area: right-top-cell;
 }
 
 .link--img-right-bottom {
-    grid-area: right_bottom-cell;
+    grid-area: right-bottom-cell;
 }
 
 .noteworthy__link--img {
@@ -63,6 +59,7 @@
     grid-template-areas: 'image title'
         'image content';
     grid-template-columns: 2fr 6fr;
+    grid-template-rows   : 1fr 3fr;
     grid-gap             : 10px;
     margin               : 20px 0;
 }
