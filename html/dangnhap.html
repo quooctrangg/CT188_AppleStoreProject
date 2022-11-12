@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <title>Đăng Nhập</title>
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../images/Apple-logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="../css/page.css">
     <link rel="stylesheet" type="text/css" href="../css/dangnhap.css">
 </head>
@@ -97,14 +99,25 @@
             </div>
             <div class="main__login-form">
                 <form class="login__form" action="" method="get">
-                    <label class="login__form--label" for="">Email or phone number</label>
-                    <input required class="login__form--input-text" type="text">
-                    <label class="login__form--label" for="">Password</label>
-                    <input required maxlength="8" class="login__form--input-text" type="password">
+
+                    <label class="login__form--label" for="">Phone number
+                        <input id="mobile" required class="login__form--input-text" type="text"
+                            onchange="return checkMoble()">
+                        <span class="check" id="check"></span>
+                    </label>
+
+
+                    <label class="login__form--label" for="">Password
+                        <input required minlength="6" class="login__form--input-text" type="password">
+                    </label>
+
                     <a class="forgot-password link__text" href="">Forgot your password?</a>
-                    <input class="login__form--input-button" type="button" value="Log In">
+
+                    <button class="login__form--input-button" type="">Log In</button>
+
                     <p class="create__acount">Need an acount? <a class="link-regidter link__text"
                             href="../html/dangky.html">Regidter</a></p>
+
                 </form>
             </div>
             <div class="main__login--qr">
@@ -144,5 +157,7 @@
         </div>
     </footer>
 </body>
+
+<script src="../js/checkvalue.js"></script>
 
 </html>

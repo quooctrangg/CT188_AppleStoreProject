@@ -25,7 +25,7 @@
                 <li>
                     <a href="trangchu.html" class="">Trang Chủ</a>
                 </li>
-                <li>
+                <li class="color_nav-click">
                     <a href="sanpham.html" class="">Sản Phẩm</a>
                 </li>
                 <li>
@@ -37,7 +37,7 @@
                 <li>
                     <a href="trogiup.html" class="">Hỗ Trợ</a>
                 </li>
-                <li class="color_nav-click">
+                <li>
                     <a href="dangnhap.html" class="">Đăng Nhập</a>
                 </li>
                 <li>
@@ -97,7 +97,7 @@
             <h2 class="h2__title suggest__title">BÁN CHẠY NHẤT</h2>
             <section class="suggest">
                 <div class="slider" id="slider">
-                    <div class="card slider-item">
+                    <div class="card slider-item" id="sp001">
                         <img src="../images/sanpham/iPhone-14-plus.png" class="card-img-top" alt="item">
                         <div class="card-body">
                             <h5 class="card-title">iPhone 14 Plus</h5>
@@ -110,13 +110,14 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">24.990.000₫</small>
+                            <small class="text-muted price">24990000</small>
                             <div class="form__order">
-                                <button class="btn__submit">Thêm vào giỏ hàng</button>
+                                <button class="btn__submit add-cart" onclick="ItemSp('sp001')">Thêm vào giỏ
+                                    hàng</button>
                             </div>
                         </div>
                     </div>
-                    <div class="card slider-item">
+                    <div class="card slider-item" id="sp005">
                         <img src="../images/sanpham/iphone-se-red.png" class="card-img-top" alt="item">
                         <div class="card-body">
                             <h5 class="card-title">iPhone SE (2022)</h5>
@@ -129,13 +130,14 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">10.990.000₫</small>
+                            <small class="text-muted price">10990000</small>
                             <div class="form__order">
-                                <button class="btn__submit">Thêm vào giỏ hàng</button>
+                                <button class="btn__submit add-cart" onclick="ItemSp('sp005')">Thêm vào giỏ
+                                    hàng</button>
                             </div>
                         </div>
                     </div>
-                    <div class="card slider-item">
+                    <div class="card slider-item" id="sp006">
                         <img src="../images/sanpham/iphone-13-pro-max.png" class="card-img-top" alt="item">
                         <div class="card-body">
                             <h5 class="card-title">iPhone 13 Pro Max</h5>
@@ -148,13 +150,14 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">36.490.000₫</small>
+                            <small class="text-muted price">36490000</small>
                             <div class="form__order">
-                                <button class="btn__submit">Thêm vào giỏ hàng</button>
+                                <button class="btn__submit add-cart" onclick="ItemSp('sp006')">Thêm vào giỏ
+                                    hàng</button>
                             </div>
                         </div>
                     </div>
-                    <div class="card slider-item">
+                    <div class="card slider-item" id="sp010">
                         <img src="../images/sanpham/apple-macbook-air-m2-2022-8-core.png" class="card-img-top"
                             alt="item">
                         <div class="card-body">
@@ -168,13 +171,14 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">38.990.000₫</small>
+                            <small class="text-muted price">38990000</small>
                             <div class="form__order">
-                                <button class="btn__submit">Thêm vào giỏ hàng</button>
+                                <button class="btn__submit add-cart" onclick="ItemSp('sp010')">Thêm vào giỏ
+                                    hàng</button>
                             </div>
                         </div>
                     </div>
-                    <div class="card slider-item">
+                    <div class="card slider-item" id="sp014">
                         <img src="../images/sanpham/iPad-Pro-M2-129-5G.png" class="card-img-top" alt="item">
                         <div class="card-body">
                             <h5 class="card-title">iPad Pro M2 12.9" WiFi Cellular 128GB</h5>
@@ -186,13 +190,14 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">35.990.000₫</small>
+                            <small class="text-muted price">35990000</small>
                             <div class="form__order">
-                                <button class="btn__submit">Thêm vào giỏ hàng</button>
+                                <button class="btn__submit add-cart" onclick="ItemSp('sp014')">Thêm vào giỏ
+                                    hàng</button>
                             </div>
                         </div>
                     </div>
-                    <div class="card slider-item">
+                    <div class="card slider-item" id="sp017">
                         <img src="../images/sanpham/apple-watch-s8-ultra-alpine.png" class="card-img-top" alt="item">
                         <div class="card-body">
                             <h5 class="card-title">Apple Watch Ultra GPS + Cellular 49mm Alpine Loop</h5>
@@ -202,9 +207,10 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">23.990.000₫</small>
+                            <small class="text-muted price">23990000</small>
                             <div class="form__order">
-                                <button class="btn__submit">Thêm vào giỏ hàng</button>
+                                <button class="btn__submit add-cart" onclick="ItemSp('sp017')">Thêm vào giỏ
+                                    hàng</button>
                             </div>
                         </div>
                     </div>
@@ -218,7 +224,7 @@
             </section>
             <h2 class="h2__title">Sản Phẩm</h2>
             <section class="product">
-                <div class="card">
+                <div class="card" id="sp001">
                     <img src="../images/sanpham/iPhone-14-plus.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone 14 Plus</h5>
@@ -231,13 +237,14 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">24.990.000₫</small>
+                        <small class="text-muted price">24990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp001')">Thêm vào giỏ
+                                hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp002">
                     <img src="../images/sanpham/iPhone-14-Pro-max.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone 14 Pro Max</h5>
@@ -250,13 +257,14 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">33.990.000₫</small>
+                        <small class="text-muted price">33990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp002')">Thêm vào giỏ
+                                hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp003">
                     <img src="../images/sanpham/iPhone-14-Pro.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone 14 Pro</h5>
@@ -269,13 +277,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">40.490.000₫</small>
+                        <small class="text-muted price">40490000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp003')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp004">
                     <img src="../images/sanpham/iPhone-14.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone 14</h5>
@@ -288,13 +296,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">23.990.000₫</small>
+                        <small class="text-muted price">23990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp004')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp005">
                     <img src="../images/sanpham/iphone-se-red.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone SE (2022)</h5>
@@ -307,13 +315,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">10.990.000₫</small>
+                        <small class="text-muted price">10990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp005')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp006">
                     <img src="../images/sanpham/iphone-13-pro-max.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone 13 Pro Max</h5>
@@ -326,13 +334,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">36.490.000₫</small>
+                        <small class="text-muted price">36490000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp006')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp007">
                     <img src="../images/sanpham/iphone-13-pro.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone 13 Pro</h5>
@@ -345,13 +353,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">31.990.000₫</small>
+                        <small class="text-muted price">31990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp007')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp008">
                     <img src="../images/sanpham/iphone-13.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone 13</h5>
@@ -364,13 +372,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">22.490.000₫ </small>
+                        <small class="text-muted price">22490000 </small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp008')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp009">
                     <img src="../images/sanpham/iphone-13-mini.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPhone 13 mini</h5>
@@ -383,13 +391,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">16.690.000₫</small>
+                        <small class="text-muted price">16690000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp009')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp010">
                     <img src="../images/sanpham/apple-macbook-air-m2-2022-8-core.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">MacBook Air M2 2022 8-core GPU</h5>
@@ -403,13 +411,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">38.990.000₫</small>
+                        <small class="text-muted price">38990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp010')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp011">
                     <img src="../images/sanpham/apple-macbook-air-m2-2022-10-core.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">MacBook Air M2 2022 10-core GPU</h5>
@@ -423,13 +431,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">46.990.000₫</small>
+                        <small class="text-muted price">46990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp011')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp012">
                     <img src="../images/sanpham/macbook-pro-14-inch-m1-pro-2021-16-core.png" class="card-img-top"
                         alt="item">
                     <div class="card-body">
@@ -444,13 +452,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">71.990.000₫</small>
+                        <small class="text-muted price">71990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp012')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp013">
                     <img src="../images/sanpham/macbook-pro-14-m1-max-2021.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">MacBook Pro 14 inch M1 Max 2021 32-Core GPU</h5>
@@ -464,13 +472,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">87.900.000₫</small>
+                        <small class="text-muted price">87900000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp013')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp014">
                     <img src="../images/sanpham/iPad-Pro-M2-129-5G.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPad Pro M2 12.9" WiFi Cellular 128GB</h5>
@@ -482,13 +490,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">35.990.000₫</small>
+                        <small class="text-muted price">35990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp014')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp015">
                     <img src="../images/sanpham/iPad-Pro-M2-11-5G-512.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPad Pro M2 11" WiFi Cellular 512GB</h5>
@@ -500,13 +508,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">36.990.000₫</small>
+                        <small class="text-muted price">36990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp015')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp016">
                     <img src="../images/sanpham/iPad-gen-10-.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">iPad 10 WiFi 256GB</h5>
@@ -518,13 +526,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">16.990.000₫</small>
+                        <small class="text-muted price">16990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp016')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp017">
                     <img src="../images/sanpham/apple-watch-s8-ultra-alpine.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">Apple Watch Ultra GPS + Cellular 49mm Alpine Loop</h5>
@@ -533,13 +541,13 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">23.990.000₫</small>
+                        <small class="text-muted price">23990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp017')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="sp018">
                     <img src="../images/sanpham/apple-watch-s8-lte-45mm.png" class="card-img-top" alt="item">
                     <div class="card-body">
                         <h5 class="card-title">Apple Watch S8 GPS + Cellular 45mm</h5>
@@ -548,9 +556,9 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">22.990.000₫</small>
+                        <small class="text-muted price">22990000</small>
                         <div class="form__order">
-                            <button class="btn__submit">Thêm vào giỏ hàng</button>
+                            <button class="btn__submit add-cart" onclick="ItemSp('sp018')">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </div>
@@ -589,6 +597,13 @@
     </footer>
 </body>
 
-<script src="../js/index.js"></script>
+<script>
+    const prices = document.querySelectorAll('.price')
+    prices.forEach(item => {
+        item.innerText = Number(item.innerText).toLocaleString('de-DE', { style: 'currency', currency: 'VND' })
+    })
+</script>
+<script src="../js/slider.js"></script>
+<script src="../js/sanpham.js"></script>
 
 </html>
