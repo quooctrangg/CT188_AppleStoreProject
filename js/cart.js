@@ -6,7 +6,7 @@ if (localStorage.getItem('cartItems')) {
 let many
 const showCart = () => {
     if (localStorage.cartItems == undefined) {
-        alert('Your cart is empty. Please go back homepage to order items.')
+        alert('Giỏ của bạn trống trơn. Vui lòng quay lại trang sản phẩm để đặt hàng.')
         location.href = "sanpham.html"
     } else {
         let custommerCart = JSON.parse(localStorage.getItem('cartItems'))
@@ -17,38 +17,41 @@ const showCart = () => {
 
         let headColumns = footColumns = ''
 
-        headColumns += '<tr><th>STT</th><th>ID</th><th>Tên</th><th>Số lượng</th><th>Giá</th><th>Xóa</th></tr>'
+        headColumns += '<tr><th>STT</th><th>ID</th><th colspan="2">Tên</th><th>Giá</th><th>Số lượng</th></tr>'
         tblHead.innerHTML = headColumns
 
         let total = amountPaid = 0
         let no = 0
 
-        let temp = -1;
-        custommerCart.forEach(item => {
-            if (item.quantity > 0) temp = 1
-        })
-        if (temp === -1) {
-            tblBody.innerHTML += '<tr><td colspan="6">No Items Found</td></tr>'
+        if (checkItem(custommerCart) === -1) {
+            tblBody.innerHTML += '<tr><td class="no-item" colspan="6">Không tìm thấy sản phẩm</td></tr>'
         } else {
             custommerCart.forEach(item => {
-                tblBody.innerHTML += '<tr><td>' + ++no + '</td><td>' + item.id + '</td><td>' + item.name + '</td><td>' + item.quantity + '</td><td class="VND">' + item.price + '</td><td><a href="#" onclick="deleteCart(this)">Delete</a></td></tr>'
+                tblBody.innerHTML += '<tr><td>' + ++no + '</td><td>' + item.id + '</td><td colspan="2">' + item.name + '</td><td class="VND">' + item.price + '</td><td><a href="#" onclick="deleteCart(this)">-</a><div>' + item.quantity + '</div><a href="#" onclick="addCart(this)">+</a></td></tr>'
                 total += Number(item.quantity) * Number(item.price)
             })
         }
 
-        footColumns += '<tr><td colspan="4">Tổng cộng: </td><td class="VND">' + total + '</td><td rowspan="2"><button onclick="btn_order()" class="submit-order">Đặt Hàng</button></td></tr>'
-        footColumns += '<tr><td colspan="4">Thuế VAT (10%): </td><td class="VND">' + Math.floor(total * 0.1) + '</td></tr>'
-        footColumns += '<tr><td colspan="4">Phải trả: </td><td class="VND">' + Math.floor(1.1 * total) + '</td><td><a href="#" onclick="deleteAllCart(this)">Xóa tất cả</a></td></tr>'
+        footColumns += '<tr><td colspan="4">Tổng cộng: </td><td class="VND">' + total + '</td><td class="deleteAll"><a href="#" onclick="deleteAllCart(this)">Xóa tất cả</a></td></tr>'
+        footColumns += '<tr><td colspan="4">Thuế VAT (10%): </td><td class="VND">' + Math.floor(total * 0.1) + '</td><td rowspan="2"><button onclick="btn_order()" class="submit-order">Đặt Hàng</button></td></tr>'
+        footColumns += '<tr><td colspan="4">Phải trả: </td><td class="VND">' + Math.floor(1.1 * total) + '</td></tr>'
 
         tblFoot.innerHTML = footColumns
-        many = total
-
+        many = total * 1.1
 
         const itemVND = document.querySelectorAll('.VND')
         itemVND.forEach(item => {
             item.innerText = Number(item.innerText).toLocaleString('de-DE', { style: 'currency', currency: 'VND' })
         })
     }
+}
+
+const checkItem = (arr) => {
+    let temp = -1
+    arr.forEach(item => {
+        if (item.quantity > 0) temp = 1
+    })
+    return temp
 }
 
 const deleteCart = (evt) => {
@@ -70,16 +73,54 @@ const deleteCart = (evt) => {
     window.location.reload()
 }
 
+const addCart = (evt) => {
+    let id = evt.parentElement.parentElement.children[1].textContent
+    let find;
+    updateCart.findIndex((element, index) => {
+        if (element.id == id) find = index
+    })
+    if (find !== undefined) {
+        if (updateCart[find].quantity < 10) {
+            updateCart[find].quantity++
+        } else {
+            alert('Bạn đã đặt số lượng tối đa cho sản phẩm này!!!')
+        }
+    }
+    localStorage.setItem('cartItems', JSON.stringify(updateCart))
+    window.location.reload()
+}
+
 const btn_order = () => {
-    many = Number(many).toLocaleString('de-DE', { style: 'currency', currency: 'VND' })
-    alert('Đặt hàng thành công, Số tiền phải trả là: ' + many)
+    let Cart = JSON.parse(localStorage.getItem('cartItems'), [])
+
+    if (checkItem(Cart) !== -1) {
+        let says = confirm('Đặt Hàng?')
+        if (says) {
+            many = Number(many).toLocaleString('de-DE', { style: 'currency', currency: 'VND' })
+
+            alert('Đặt hàng thành công, Số tiền phải trả là: ' + many)
+            Cart = Cart.filter(item => {
+                return item.quantity < 0
+            })
+            localStorage.setItem('cartItems', JSON.stringify(Cart))
+            window.location.reload()
+        }
+    } else {
+        alert('Bạn chưa có sản phẩm trong giỏ hàng!')
+        location.href = "sanpham.html"
+    }
 }
 
 const deleteAllCart = () => {
     let Cart = JSON.parse(localStorage.getItem('cartItems'), [])
-    Cart = Cart.filter(item => {
-        return item.quantity < 0
-    })
-    localStorage.setItem('cartItems', JSON.stringify(Cart))
-    window.location.reload()
+    if (checkItem(Cart) !== -1) {
+        let says = confirm('Bạn muốn xóa tất cả??')
+        if (says) {
+            Cart = Cart.filter(item => {
+                return item.quantity < 0
+            })
+            localStorage.setItem('cartItems', JSON.stringify(Cart))
+            window.location.reload()
+        }
+    }
 }

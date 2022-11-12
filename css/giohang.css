@@ -48,6 +48,7 @@
 .list-body tr td a {
     color          : red;
     text-decoration: none;
+    font-size      : 30px;
 }
 
 .list-body tr td a:hover {
@@ -55,20 +56,38 @@
 }
 
 .list-body tr td:last-child {
-    text-align: center;
+    text-align     : center;
+    justify-content: space-between;
 }
 
 .list-body tr td:first-child {
     text-align: center;
 }
 
+.list-body tr td div {
+    display     : inline;
+    margin-left : 20px;
+    margin-right: 20px;
+}
+
 .list-foot tr td a {
     color          : red;
     text-decoration: none;
+    text-align     : center;
+
 }
 
-.list-foot tr td:last-child {
+.list-foot tr td a:hover {
+    color: orange;
+}
+
+.deleteAll {
     text-align: center;
+}
+
+.no-item {
+    font-size: 25px;
+    color    : red;
 }
 
 

@@ -24,7 +24,7 @@ const ItemPk = (id) => {
             })
             if (find !== undefined) {
                 if (updateCart[find].quantity >= 10) {
-                    alert('Dat gioi han mua !!!')
+                    alert('Bạn đã đặt số lượng tối đa cho sản phẩm này!!!')
                 }
                 else {
                     updateCart[find].quantity++
