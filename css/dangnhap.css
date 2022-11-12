@@ -81,6 +81,12 @@
     border          : none;
     display         : block;
     margin-top      : 20px;
+    border-radius   : 10px;
+}
+
+.login__form--input-button:hover {
+    background-color: #5af25a;
+    color           : red;
 }
 
 .forgot-password {

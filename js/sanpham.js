@@ -10,7 +10,8 @@ const ItemSp = (id) => {
             id: id,
             name: getItem.children[1].childNodes[1].textContent,
             price: getItem.children[2].childNodes[1].firstChild.data.slice(0, -2).split('.').join(''),
-            quantity: 1
+            quantity: 1,
+            urlImg: getItem.children[0].currentSrc
         }
         if (JSON.parse(localStorage.getItem('cartItems')) === null) {
             updateCart.push(newItem)
