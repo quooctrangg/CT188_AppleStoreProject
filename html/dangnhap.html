@@ -103,17 +103,19 @@
                     <label class="login__form--label" for="">Phone number
                         <input id="mobile" required class="login__form--input-text" type="text"
                             onchange="return checkMoble()">
-                        <span class="check" id="checkMb"></span>
                     </label>
 
 
                     <label class="login__form--label" for="">Password
                         <input id="password" required minlength="6" class="login__form--input-text" type="password"
                             onchange="return checkPass()">
-                        <span class="check" id="checkPs"></span>
                     </label>
 
-                    <a class="forgot-password link__text" href="">Forgot your password?</a>
+                    <div class="forgot-hidden-password">
+                        <a class="forgot-password link__text" href="">Forgot your password?</a>
+                        <label class="hidden-password" for=""><input onclick="return checkbox()" id="checkbox-hidden"
+                                type="checkbox"> Hiện mật khẩu</input></label>
+                    </div>
 
                     <button class="login__form--input-button" type="" onclick="btn_login()" id="Button">Log
                         In</button>

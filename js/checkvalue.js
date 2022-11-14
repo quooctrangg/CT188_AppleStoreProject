@@ -1,8 +1,5 @@
 let mobile = document.getElementById('mobile')
-let checkMb = document.getElementById('checkMb')
-
 let password = document.getElementById('password')
-let checkPs = document.getElementById('checkPs')
 
 let IscheckMoble = IscheckPass = -1
 
@@ -13,24 +10,20 @@ const validateMobile = (number) => {
 
 const checkMoble = () => {
     if (!validateMobile(mobile.value)) {
-        checkMb.innerHTML = 'Invalid <i class="fa-solid fa-x invalid"></i></i>'
-        checkMb.style.color = 'red'
+        mobile.style.border = "1px solid red"
         IscheckMoble = -1
     } else {
-        checkMb.innerHTML = 'Valid <i class="fa-solid fa-check valid"></i>'
-        checkMb.style.color = '#33cc33'
+        mobile.style.border = "1px solid #33cc33"
         IscheckMoble = 1
     }
 }
 
 const checkPass = () => {
     if (password.value.length < 6) {
-        checkPs.innerHTML = 'Invalid <i class="fa-solid fa-x invalid"></i></i>'
-        checkPs.style.color = 'red'
+        password.style.border = "1px solid red"
         IscheckPass = -1
     } else {
-        checkPs.innerHTML = 'Valid <i class="fa-solid fa-check valid"></i>'
-        checkPs.style.color = '#33cc33'
+        password.style.border = "1px solid #33cc33"
         IscheckPass = 1
     }
 }
@@ -41,5 +34,17 @@ let btn_login = () => {
     } else {
         alert('Số điện thoại hoặc mật khẩu không đúng')
         location.href = "dangnhap.html"
+    }
+}
+
+
+const checkbox = () => {
+    let checkbox = document.getElementById('checkbox-hidden')
+    let pwd = document.getElementById('password')
+
+    if (checkbox.checked == true) {
+        pwd.type = "text"
+    } else {
+        pwd.type = "password"
     }
 }
