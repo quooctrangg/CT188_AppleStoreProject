@@ -3,9 +3,9 @@ if (localStorage.getItem('cartItems')) {
     updateCart = JSON.parse(localStorage.getItem('cartItems'), [])
 }
 
-const ItemPk = (id) => {
+const orderItem = (evt) => {
+    let id = evt.parentElement.parentElement.parentElement.parentElement.id;
     getItem = document.getElementById(id)
-
     if (typeof Storage !== undefined) {
         let newItem = {
             id: id,
