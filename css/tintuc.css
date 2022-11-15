@@ -1,3 +1,5 @@
+/* Nguyen Quoc Trang B2012274 */
+
 .noteworthy {
     display            : grid;
     grid-template-areas: 'left-cell right-top-cell'
