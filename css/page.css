@@ -28,7 +28,6 @@ p {
 }
 
 .header {
-    display            : flex;
     display            : grid;
     grid-area          : header-cell;
     grid-template-areas: 'logo nav search';
@@ -128,9 +127,7 @@ p {
     color      : #fff;
 }
 
-
 /* Header */
-
 .color_nav-click {
     background-color: red;
 }
@@ -148,7 +145,6 @@ p {
     padding    : 0;
     grid-area  : nav;
 }
-
 
 #main-menu {
     display        : flex;
@@ -250,10 +246,7 @@ nav #main-menu li:hover a {
     opacity  : 1;
 }
 
-
-
 /* search */
-
 .main__search {
     grid-area    : search;
     box-sizing   : border-box;
@@ -297,9 +290,7 @@ nav #main-menu li:hover a {
     display: none;
 }
 
-
 /* Footer */
-
 .lienhe {
     display        : flex;
     margin         : 20px 0;
