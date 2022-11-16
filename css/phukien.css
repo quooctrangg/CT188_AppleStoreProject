@@ -26,8 +26,8 @@
     border          : 1px solid black;
     border-radius   : 20px;
     display         : block;
-    width           : 32.001%;
-    margin          : 8px;
+    width           : 32%;
+    margin          : 5px;
     background-color: #323232;
     box-shadow      : 0 2px 21px rgba(0, 0, 0, 0.25);
     position        : relative;
@@ -182,7 +182,74 @@
 
 /*responsive */
 /* tablet: width >= 740px and width < 1024px*/
-@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .card {
+        overflow: inherit
+    }
+
+    .card-img-top {
+        height: 250px;
+    }
+
+    .overlay {
+        position        : static;
+        background-color: #323232;
+        overflow        : initial;
+        width           : 100%;
+        height          : 70px;
+        opacity         : 1;
+    }
+
+    .card-body {
+        display: none;
+    }
+
+    .card:hover .overlay {
+        height: 70px;
+    }
+
+    .text-muted {
+        color: #D8D9CF;
+    }
+}
 
 /* mobile < 740px */
-@media only screen and (max-width: 46.1875em) {}
+@media only screen and (max-width: 46.1875em) {
+    .card {
+        overflow: inherit
+    }
+
+    .card-img-top {
+        height: 250px;
+    }
+
+    .overlay {
+        position        : static;
+        background-color: #323232;
+        overflow        : initial;
+        width           : 100%;
+        height          : 70px;
+        opacity         : 1;
+    }
+
+    .card-body {
+        display: none;
+    }
+
+    .card:hover .overlay {
+        height: 70px;
+    }
+
+    .text-muted {
+        color: #D8D9CF;
+    }
+
+    .suggest__title,
+    .suggest {
+        display: none;
+    }
+
+    .card {
+        width: 48%;
+    }
+}

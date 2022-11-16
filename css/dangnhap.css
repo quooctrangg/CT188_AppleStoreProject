@@ -135,7 +135,38 @@
 
 /*responsive */
 /* tablet: width >= 740px and width < 1024px*/
-@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .main__login--qr {
+        display: none;
+    }
+
+    .main__login {
+        grid-template-areas: 'top-cell'
+            'left-cell ';
+        row-gap  : 0;
+        max-width: 500px;
+    }
+
+    .title-login {
+        width: 100%;
+    }
+
+}
 
 /* mobile < 740px */
-@media only screen and (max-width: 46.1875em) {}
+@media only screen and (max-width: 46.1875em) {
+    .main__login--qr {
+        display: none;
+    }
+
+    .main__login {
+        grid-template-areas: 'top-cell'
+            'left-cell ';
+        row-gap  : 0;
+        max-width: 500px;
+    }
+
+    .title-login {
+        width: 100%;
+    }
+}
