@@ -48,6 +48,7 @@ p {
     grid-template-areas: "thongtin""diachi";
     justify-content    : center;
     background-color   : #333333;
+    color              : #fff;
 }
 
 .content-center,

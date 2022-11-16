@@ -52,7 +52,7 @@ const orderHome = () => {
                 localStorage.setItem('cartItems', JSON.stringify(updateCart))
             }
         } else {
-            alert('Local storage is not working on your browser')
+            alert('Local storage không hoạt động trên trình duyệt của bạn')
         }
     }
     const attachingEvent = evt => evt.addEventListener('click', orderItem)
@@ -95,7 +95,7 @@ const orderProduct = () => {
                 localStorage.setItem('cartItems', JSON.stringify(updateCart))
             }
         } else {
-            alert('Local storage is not working on your browser')
+            alert('Local storage không hoạt động trên trình duyệt của bạn')
         }
     }
     const attachingEvent = evt => evt.addEventListener('click', orderItem)
@@ -138,7 +138,7 @@ const order_Accessory = () => {
                 localStorage.setItem('cartItems', JSON.stringify(updateCart))
             }
         } else {
-            alert('Local storage is not working on your browser')
+            alert('Local storage không hoạt động trên trình duyệt của bạn')
         }
     }
     const attachingEvent = evt => evt.addEventListener('click', orderItem)
