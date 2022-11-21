@@ -1,9 +1,95 @@
-/* Nguyen Truong Nhat Truong B2012050 */
+/* Nguyen Truong Nhut Truong B2012050 */
 
+.background {
+    background-color: rgb(61, 60, 59);
+}
+
+body {
+    background-color: azure;
+}
+
+.section-container {
+    margin: 150px;
+}
+
+#logo-reg {
+    width : 200px;
+    height: 200px;
+}
+
+.img {
+    text-align: center;
+}
+
+h2 {
+    text-align   : center;
+    margin-bottom: 20px;
+}
+
+#form {
+    padding      : 10px 40px;
+    background   : rgba(85, 81, 81, 0.699);
+    border       : 1px solid black;
+    border-radius: 10px;
+}
+
+.txt {
+    width           : 100%;
+    height          : 40px;
+    border-radius   : 10px;
+    border          : 1px solid #202225;
+    font-size       : 15px;
+    margin          : 5px 0;
+    background-color: #202225;
+    color           : #fff;
+}
+
+.txt:hover {
+    border: 3px solid rgb(12, 133, 208);
+}
+
+.btn-reg {
+    width           : 100%;
+    height          : 40px;
+    padding         : 10px;
+    margin-top      : 10px;
+    background-color: #5a6df2;
+    border-radius   : 10px;
+}
+
+.btn-reg:hover {
+    background-color: #5af25a;
+}
+
+#address {
+    height: 100px;
+    color : black;
+}
+
+.label-reg {
+    color: aliceblue;
+}
+
+label a {
+    text-decoration: none;
+    color          : rgb(181, 210, 236);
+}
+
+label a:hover {
+    color: rgb(13, 240, 168);
+}
+
+textarea {
+    border: 2px solid black;
+}
 
 /*responsive */
 /* tablet: width >= 740px and width < 1024px*/
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
 
 /* mobile < 740px */
-@media only screen and (max-width: 46.1875em) {}
+@media only screen and (max-width: 46.1875em) {
+    .section-container {
+        margin: auto;
+    }
+}

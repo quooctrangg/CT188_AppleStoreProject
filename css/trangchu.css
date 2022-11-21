@@ -1,4 +1,4 @@
-/* Nguyen Truong Nhat Truong B2012050 */
+/* Nguyen Truong Nhut Truong B2012050 */
 
 .slider_banner {
     width   : 100%;
@@ -81,7 +81,6 @@ h2 {
     text-align    : center;
 }
 
-
 .tensp {
     font-size : 100%;
     color     : aliceblue;
@@ -129,6 +128,11 @@ p {
 /* mobile < 740px */
 @media only screen and (max-width: 46.1875em) {
     .section_container {
-        flex-wrap: wrap;
+        flex-wrap      : wrap;
+        justify-content: space-around;
+    }
+
+    .sanpham {
+        width: 30%;
     }
 }

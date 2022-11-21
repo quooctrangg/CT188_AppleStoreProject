@@ -1,10 +1,11 @@
 // Nguyen Quoc Trang B2012274
+// Nguyen Truong Nhut Truong B2012050
 
 //03-Vi du-CT188.pdf 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript
 //https://www.w3schools.com/js/
 
-//chỉnh sửa định dạng thành VND
+//Chỉnh sửa định dạng thành VND
 const priceItems = () => {
     const prices = document.querySelectorAll('.price')
     prices.forEach(item => {
@@ -147,8 +148,8 @@ const order_Accessory = () => {
     arrCart.forEach(attachingEvent)
 }
 
-let many
 //Hiển thị sản phẩm trong giỏ hàng
+let many
 const showCart = () => {
     if (localStorage.cartItems == undefined) {
         alert('Giỏ của bạn trống trơn. Vui lòng quay lại trang sản phẩm để đặt hàng.')
@@ -185,7 +186,7 @@ const showCart = () => {
     }
 }
 
-//Kiểm tra xem trong Array còn Item naò không
+//Kiểm tra xem trong Array còn Item nào không
 const checkItem = (arr) => {
     let temp = -1
     arr.forEach(item => {
@@ -303,10 +304,10 @@ const validateMobile = (number) => {
 //Kiểm tra số điện thoại
 const checkMoble = () => {
     if (!validateMobile(mobile.value)) {
-        mobile.style.border = "1px solid red"
+        mobile.style.border = "3px solid red"
         IscheckMoble = -1
     } else {
-        mobile.style.border = "1px solid #33cc33"
+        mobile.style.border = "3px solid #33cc33"
         IscheckMoble = 1
     }
 }
@@ -314,10 +315,10 @@ const checkMoble = () => {
 //Kiểm tra mật khẩu
 const checkPass = () => {
     if (password.value.length < 6) {
-        password.style.border = "1px solid red"
+        password.style.border = "3px solid red"
         IscheckPass = -1
     } else {
-        password.style.border = "1px solid #33cc33"
+        password.style.border = "3px solid #33cc33"
         IscheckPass = 1
     }
 }
@@ -365,5 +366,86 @@ const hidden = () => {
     }
     for (i = 4; i < lists.length; i++) {
         lists[i].style.display = "none"
+    }
+}
+
+//Kiểm tra họ tên
+let fname = document.getElementById('fullname')
+const validatename = (text) => {
+    let name = /^([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA-V]+)((\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA-V]+){1,})/g;
+    return name.test(text)
+}
+
+const checkfname = () => {
+    if (!validatename(fullname.value)) {
+        fullname.style.border = "3px solid red"
+        Ischeckname = -1
+    } else {
+        fullname.style.border = "3px solid #33cc33"
+        Ischeckname = 1
+    }
+}
+
+//Kiểm tra mật khẩu
+let password1 = document.getElementById('password1')
+const checkpassword1 = () => {
+    if (password1.value.length < 6) {
+        password1.style.border = "3px solid red"
+        Ischeckpass1 = -1
+    } else {
+        password1.style.border = "3px solid #33cc33"
+        Ischeckpass1 = 1
+    }
+}
+
+//kiểm tra nhập lại mật khẩu
+let password2 = document.getElementById('password2')
+const checkpassword = () => {
+    if (password1.value === password2.value) {
+        password2.style.border = "3px solid #33cc33"
+        Ischeckpass2 = 1
+    }
+    else {
+        password2.style.border = "3px solid red"
+        Ischeckpass2 = -1
+    }
+}
+
+//kiểm tra email
+let email = document.getElementById('email')
+const validateEmail = (text) => {
+    var Email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+/g
+    return Email.test(text)
+}
+
+const checkemail = () => {
+    if (!validateEmail(email.value)) {
+        email.style.border = "3px solid red"
+        Ischeckemail = -1
+    }
+    else {
+        email.style.border = "3px solid #33cc33"
+        Ischeckemail = 1
+    }
+}
+
+//Submit hỗ trợ
+let btn_sp = () => {
+    if (Ischeckphone === 1 && Ischeckname === 1) {
+        alert('Đã gửi thành công, chúng tôi sẽ phản hồi sớm nhất cho bạn!')
+    } else {
+        alert('Gửi thất bại. Vui lòng kiểm tra lại!')
+        window.location.href = "trogiup.html"
+    }
+}
+
+//Submit đăng ký
+let btn_reg = () => {
+    if (IscheckMoble === 1 && Ischeckpass1 === 1 && Ischeckpass2 === 1) {
+        alert('Đăng ký tài khoản thành công!')
+        window.location.href = "trangchu.html"
+    } else {
+        alert('Đăng ký thất bại. Vui lòng kiểm tra lại thông tin!')
+        window.location.href = "dangky.html"
     }
 }

@@ -1,5 +1,8 @@
-<!-- Nguyen Truong Nhat Truong B2012050 -->
+<!-- Nguyen Truong Nhut Truong B2012050 -->
 
+<!--
+    https://www.w3schools.com/
+ -->
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -15,7 +18,7 @@
     <title>Đăng Ký</title>
 </head>
 
-<body class="page">
+<body class="page background">
     <header class="header">
         <a href="trangchu.html">
             <img src="../images/Apple-logo.png" alt="logo" id="logo">
@@ -94,7 +97,37 @@
         </div>
     </header>
     <main class="main">
-
+        <section class="section-container">
+            <form action="" id="form">
+                <div class="img">
+                    <img src="../images/Apple-logo.png" id="logo-reg" alt="">
+                </div>
+                <h2 class="main__title title-center">ĐĂNG KÝ TÀI KHOẢN</h2>
+                <label for="" class="label-reg">Số điện thoại <br>
+                    <input type="text" class="txt" id="mobile" required placeholder="Nhập số điện thoại"
+                        onchange="return checkMoble ()">
+                </label> <br>
+                <label for="" class="label-reg">Mật khẩu <br>
+                    <input type="password" class="txt" minlength="6" id="password1" required placeholder="Nhập mật khẩu"
+                        onchange="return checkpassword1 ()">
+                </label> <br>
+                <label for="" class="label-reg">Nhập lại mật khẩu <br>
+                    <input type="password" class="txt" id="password2" required placeholder="Nhập lại mật khẩu"
+                        onchange="return checkpassword ()">
+                </label> <br>
+                <label for="" class="label-reg">Địa chỉ <br>
+                    <textarea class="txt" id="address" name="" form="" placeholder="Nhập nội dung" required></textarea>
+                </label> <br>
+                <label for="" class="label-reg">
+                    <div>
+                        <input type="checkbox" name="" id="checkbox" required> Tôi đồng ý với chính sách bảo mật và điều
+                        khoản sử dụng
+                    </div>
+                    <a href="#"> Chính sách bảo mật và điều khoản sử dụng</a>
+                </label> <br>
+                <button class="btn-reg" onclick="btn_reg ()">Đăng ký</button>
+            </form>
+        </section>
     </main>
     <footer class="footer">
         <div class="lienhe">
@@ -127,5 +160,7 @@
         </div>
     </footer>
 </body>
+
+<script src="../js/main.js"></script>
 
 </html>

@@ -111,6 +111,10 @@
     font-size : 15px;
 }
 
+.link-register {
+    font-size: 15px;
+}
+
 .forgot-password:hover,
 .link-register:hover {
     color: red;

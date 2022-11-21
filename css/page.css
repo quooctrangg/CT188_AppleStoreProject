@@ -1,6 +1,6 @@
 /*
     Nguyen Quoc Trang B2012274
-    Nguyen Truong Nhat Truong B2012050
+    Nguyen Truong Nhut Truong B2012050
  */
 
 * {
@@ -244,6 +244,7 @@ nav #main-menu li:hover a {
 .nav-input:checked~.nav-mobie {
     transform: translateX(0%);
     opacity  : 1;
+    z-index  : 1;
 }
 
 /* search */
@@ -270,7 +271,7 @@ nav #main-menu li:hover a {
     justify-content : center;
     border-radius   : 20px;
     outline         : none;
-    font-size       : 20px;
+    font-size       : 15px;
     padding-left    : 5px;
 }
 
