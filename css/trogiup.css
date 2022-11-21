@@ -5,7 +5,7 @@
     /* display            : flex; */
     grid-template-areas   : 'h2 h2'
         'form img';
-    background-color: #fff;
+    background-color: #f2f2f2;
     margin-top      : 2px;
 }
 
@@ -20,17 +20,17 @@ h2 {
 }
 
 .formsupport {
-    grid-area             : form;
-    color                 : #333333;
-    /* margin-right       : 20px; */
-    padding               : 0 20px;
+    grid-area: form;
+    color    : #333333;
+    padding  : 0 20px;
 }
 
 .formsupport input {
-    margin       : 5px 0;
-    width        : 100%;
-    height       : 40px;
-    border-radius: 10px;
+    margin          : 5px 0;
+    width           : 100%;
+    height          : 40px;
+    border-radius   : 10px;
+    background-color: #e6e6e6;
 }
 
 .formsupport input:hover {
@@ -38,10 +38,12 @@ h2 {
 }
 
 textarea {
-    width        : 100%;
-    height       : 100px;
-    border-radius: 10px;
-    border       : 2px solid black;
+    width           : 100%;
+    height          : 100px;
+    border-radius   : 10px;
+    border          : 2px solid black;
+    background-color: #e6e6e6;
+    font-size       : 20px;
 }
 
 textarea:hover {
@@ -54,9 +56,13 @@ textarea:hover {
 
 .btn-support {
     padding         : 8px 40px;
-    background-color: yellow;
+    background-color: #5a6df2;
     cursor          : pointer;
     margin-bottom   : 20px;
+}
+
+.btn-support:hover {
+    background-color: #5af25a;
 }
 
 .img {
