@@ -1,11 +1,11 @@
 /* Nguyen Quoc Trang B2012274 */
 
-.container {
+/* .container {
     margin: 10px auto;
     width : 90%;
-}
+} 
 
-.table__items {
+ .table__items {
     font-family    : arial, sans-serif;
     color          : aliceblue;
     border-collapse: collapse;
@@ -25,7 +25,6 @@
 }
 
 .list-foot tr td {
-    /* text-align : center; */
     font-weight: bold;
 }
 
@@ -39,7 +38,6 @@
     margin      : 0;
     font-size   : 20px;
     width       : 100%;
-    /* height   : 80px; */
 }
 
 .submit-order:hover {
@@ -97,6 +95,76 @@
 
 .list-body tr td:nth-child(2) {
     text-align: center;
+} */
+
+.cart-heading {
+    color: #fff;
+    margin: 5px;
+}
+
+.cart-heading p {
+    display: inline;
+}
+
+.cart__item {
+    border-top: 1px solid slategrey;
+    margin: 10px;
+    display: flex;
+    width: 1200px;
+    /* justify-content: space-between; */
+    color: #fff;
+}
+
+.cart_item-img {
+    width: 100px;
+}
+
+.cart__item-info {
+    display: flex;
+    width: 70%;
+    line-height: 1.5;
+}
+
+.cart_item-title {
+    width: 80%;
+    margin: 10px;
+}
+
+.cart_item-body {
+    width: 50%;
+}
+
+.cart-price {}
+
+.cart-quantity {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-quantity a {
+    border: 1px solid #989898;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: red;
+}
+
+.cart-sum {}
+
+.cart_remove {
+    width: 20%;
+    text-align: end;
+    margin: 5px;
+
+}
+
+.cart_remove a {
+    text-decoration: none;
+    color: red;
+    /* vertical-align: middle; */
+    /* margin: 5px; */
+    /* padding: 5px; */
 }
 
 /*responsive */

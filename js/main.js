@@ -157,32 +157,32 @@ const showCart = () => {
     } else {
         let custommerCart = JSON.parse(localStorage.getItem('cartItems'))
 
-        const tblHead = document.getElementsByTagName('thead')[0]
-        const tblBody = document.getElementsByTagName('tbody')[0]
-        const tblFoot = document.getElementsByTagName('tfoot')[0]
+        // const tblHead = document.getElementsByTagName('thead')[0]
+        // const tblBody = document.getElementsByTagName('tbody')[0]
+        // const tblFoot = document.getElementsByTagName('tfoot')[0]
 
-        let headColumns = footColumns = ''
+        // let headColumns = footColumns = ''
 
-        headColumns += '<tr><th>STT</th><th>Hình</th><th colspan="2">Tên</th><th>Giá</th><th colspan="3">Số lượng</th></tr>'
-        tblHead.innerHTML = headColumns
+        // headColumns += '<tr><th>STT</th><th>Hình</th><th colspan="2">Tên</th><th>Giá</th><th colspan="3">Số lượng</th></tr>'
+        // tblHead.innerHTML = headColumns
 
-        let total = amountPaid = 0
-        let no = 0
+        // let total = amountPaid = 0
+        // let no = 0
 
-        if (checkItem(custommerCart) === -1) {
-            tblBody.innerHTML += '<tr><td class="no-item" colspan="6">Không tìm thấy sản phẩm</td></tr>'
-        } else {
-            custommerCart.forEach(item => {
-                tblBody.innerHTML += '<tr><td>' + ++no + '</td><td><img class="img_order" src="' + item.urlImg + '" alt=""><p hidden>' + item.id + '</p></td><td colspan="2">' + item.name + '</td><td class="price">' + item.price + '</td><td class="text-center"><a href="#" onclick="deleteCart(this)">-</a></td><td class="text-center">' + item.quantity + '</td><td class="text-center"><a href="#" onclick="addCart(this)">+</a></td></tr>'
-                total += Number(item.quantity) * Number(item.price)
-            })
-        }
-        footColumns += '<tr><td colspan="4">Tổng cộng: </td><td class="price">' + total + '</td><td colspan="3" class="deleteAll"><a href="#" onclick="deleteAllCart(this)">Xóa tất cả</a></td></tr>'
-        footColumns += '<tr><td colspan="4">Thuế VAT (10%): </td><td class="price">' + Math.floor(total * 0.1) + '</td><td rowspan="2" colspan="3"><button onclick="btn_order()" class="submit-order">Đặt Hàng</button></td></tr>'
-        footColumns += '<tr><td colspan="4">Phải trả: </td><td class="price">' + Math.floor(1.1 * total) + '</td></tr>'
+        // if (checkItem(custommerCart) === -1) {
+        //     tblBody.innerHTML += '<tr><td class="no-item" colspan="6">Không tìm thấy sản phẩm</td></tr>'
+        // } else {
+        //     custommerCart.forEach(item => {
+        //         tblBody.innerHTML += '<tr><td>' + ++no + '</td><td><img class="img_order" src="' + item.urlImg + '" alt=""><p hidden>' + item.id + '</p></td><td colspan="2">' + item.name + '</td><td class="price">' + item.price + '</td><td class="text-center"><a href="#" onclick="deleteCart(this)">-</a></td><td class="text-center">' + item.quantity + '</td><td class="text-center"><a href="#" onclick="addCart(this)">+</a></td></tr>'
+        //         total += Number(item.quantity) * Number(item.price)
+        //     })
+        // }
+        // footColumns += '<tr><td colspan="4">Tổng cộng: </td><td class="price">' + total + '</td><td colspan="3" class="deleteAll"><a href="#" onclick="deleteAllCart(this)">Xóa tất cả</a></td></tr>'
+        // footColumns += '<tr><td colspan="4">Thuế VAT (10%): </td><td class="price">' + Math.floor(total * 0.1) + '</td><td rowspan="2" colspan="3"><button onclick="btn_order()" class="submit-order">Đặt Hàng</button></td></tr>'
+        // footColumns += '<tr><td colspan="4">Phải trả: </td><td class="price">' + Math.floor(1.1 * total) + '</td></tr>'
 
-        tblFoot.innerHTML = footColumns
-        many = total * 1.1
+        // tblFoot.innerHTML = footColumns
+        // many = total * 1.1
     }
 }
 
