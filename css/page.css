@@ -204,7 +204,7 @@ nav #main-menu li:hover a {
     bottom          : 0;
     width           : 200px;
     max-width       : 100%;
-    background-color: #fff;
+    background-color: #3e3e3f;
     transform       : translateX(-100%);
     opacity         : 0;
     transition      : all linear 0.5s;
@@ -223,7 +223,7 @@ nav #main-menu li:hover a {
 }
 
 .nav_mobie-link {
-    color          : #333;
+    color          : #fff;
     display        : block;
     padding        : 8px 0;
     text-decoration: none;
