@@ -1,104 +1,7 @@
 /* Nguyen Quoc Trang B2012274 */
 
-/* .container {
-    margin: 10px auto;
-    width : 90%;
-} 
-
- .table__items {
-    font-family    : arial, sans-serif;
-    color          : aliceblue;
-    border-collapse: collapse;
-    width          : 100%;
-    border         : 1px solid black;
-}
-
-.list-head th {
-    background-color: #17a2b8;
-    padding         : 3px;
-    border          : 2px solid black;
-}
-
-:is(.list-foot, .list-body) :is(td, th) {
-    border : 2px solid black;
-    padding: 3px;
-}
-
-.list-foot tr td {
-    font-weight: bold;
-}
-
-.list-foot tr td:first-child {
-    text-align   : right;
-    padding-right: 10px;
-}
-
-.submit-order {
-    padding     : 0;
-    margin      : 0;
-    font-size   : 20px;
-    width       : 100%;
-}
-
-.submit-order:hover {
-    color           : red;
-    background-color: yellowgreen;
-}
-
-.list-body tr td a {
-    color          : red;
-    text-decoration: none;
-    font-size      : 30px;
-}
-
-.list-body tr td a:hover {
-    color: orange;
-}
-
-.list-body tr td:last-child {
-    text-align     : center;
-    justify-content: space-between;
-}
-
-.list-body tr td:first-child {
-    text-align: center;
-}
-
-.text-center {
-    text-align: center;
-    width     : 50px;
-}
-
-.list-foot tr td a {
-    color          : red;
-    text-decoration: none;
-    text-align     : center;
-
-}
-
-.list-foot tr td a:hover {
-    color: orange;
-}
-
-.deleteAll {
-    text-align: center;
-}
-
-.no-item {
-    font-size: 25px;
-    color    : red;
-}
-
-.img_order {
-    width: 60px;
-}
-
-.list-body tr td:nth-child(2) {
-    text-align: center;
-} */
-
 .cart-heading {
-    color: #fff;
+    color : #fff;
     margin: 5px;
 }
 
@@ -106,13 +9,15 @@
     display: inline;
 }
 
+.cart-body {}
+
 .cart__item {
     border-top: 1px solid slategrey;
-    margin: 10px;
-    display: flex;
-    width: 1200px;
-    /* justify-content: space-between; */
-    color: #fff;
+    margin    : 10px 0;
+    display   : flex;
+    width     : 100%;
+    color     : #fff;
+    padding   : 5px;
 }
 
 .cart_item-img {
@@ -120,56 +25,123 @@
 }
 
 .cart__item-info {
-    display: flex;
-    width: 70%;
+    display    : flex;
+    width      : 70%;
     line-height: 1.5;
 }
 
 .cart_item-title {
-    width: 80%;
-    margin: 10px;
+    width : 80%;
+    margin: auto 20px;
+
 }
 
 .cart_item-body {
-    width: 50%;
+    width: 100%;
+}
+
+.table--item-body tr td:first-child {
+    width: 150px;
 }
 
 .cart-price {}
 
 .cart-quantity {
     display: flex;
-    justify-content: space-between;
+}
+
+.cart-quantity span {
+    margin: 0 25px;
 }
 
 .cart-quantity a {
-    border: 1px solid #989898;
-    width: 30px;
-    height: 30px;
-    text-align: center;
+    border         : 1px solid #989898;
+    width          : 30px;
+    height         : 30px;
+    text-align     : center;
     text-decoration: none;
-    color: red;
+    color          : red;
+    cursor         : pointer;
+}
+
+.cart-quantity a:hover {
+    background-color: beige;
 }
 
 .cart-sum {}
 
 .cart_remove {
-    width: 20%;
-    text-align: end;
-    margin: 5px;
-
+    width       : 20%;
+    text-align  : end;
+    margin      : 5px;
+    margin-right: 20px;
 }
 
 .cart_remove a {
     text-decoration: none;
-    color: red;
-    /* vertical-align: middle; */
-    /* margin: 5px; */
-    /* padding: 5px; */
+    color          : red;
+    cursor         : pointer;
+}
+
+.cart_remove a:hover {
+    color: #EB6440;
+}
+
+.cart-footer {
+    border-top: 2px solid slategrey;
+    margin-top: 20px;
+    padding   : 10px;
+    text-align: end;
+    color     : #fff;
+}
+
+.cart-total {}
+
+.link_more {
+    text-decoration: none;
+}
+
+.btn_pay {}
+
+.btn {
+    color           : #fff;
+    width           : auto;
+    height          : 30px;
+    font-size       : 15px;
+    background-color: #EB6440;
+    padding         : 5px;
+    margin-top      : 10px;
+    border          : 1px solid black;
+    cursor          : pointer;
+}
+
+.btn:hover {
+    background-color: red;
 }
 
 /*responsive */
 /* tablet: width >= 740px and width < 1024px*/
-@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .cart_item-img {
+        display: none;
+    }
+}
 
 /* mobile < 740px */
-@media only screen and (max-width: 46.1875em) {}
+@media only screen and (max-width: 46.1875em) {
+    .cart_item-img {
+        display: none;
+    }
+
+    .cart__item-info {
+        width: 100%;
+    }
+
+    .table--item-body {
+        vertical-align: middle;
+    }
+
+    .cart_remove {
+        display: none;
+    }
+}

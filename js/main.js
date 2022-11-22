@@ -148,42 +148,77 @@ const order_Accessory = () => {
     arrCart.forEach(attachingEvent)
 }
 
+//Đếm có bao nhiêu sản phẩm trong giỏ hàng
+const countCart = () => {
+    let count = 0
+    if (localStorage.cartItems == undefined) {
+        return 0
+    } else {
+        let cart = JSON.parse(localStorage.getItem('cartItems'))
+        if (checkItem(cart) === -1) {
+            return 0
+        } else {
+            cart.forEach(item => {
+                count += item.quantity
+            })
+        }
+    }
+    return count
+}
+
 //Hiển thị sản phẩm trong giỏ hàng
 let many
 const showCart = () => {
-    if (localStorage.cartItems == undefined) {
-        alert('Giỏ của bạn trống trơn. Vui lòng quay lại trang sản phẩm để đặt hàng.')
-        location.href = "sanpham.html"
+    let custommerCart = JSON.parse(localStorage.getItem('cartItems'))
+
+    let headerCart = document.getElementsByClassName('cart-heading')[0]
+    let bodyCart = document.getElementsByClassName('cart-body')[0]
+    let footerCart = document.getElementsByClassName('cart-footer')[0]
+
+    headerCart.innerHTML += `<p>Có ${countCart()} sản phẩm trong giỏ hàng.</p>`
+
+    let total = 0
+
+    if (checkItem(custommerCart) === -1) {
+        bodyCart.innerHTML += ''
     } else {
-        let custommerCart = JSON.parse(localStorage.getItem('cartItems'))
-
-        // const tblHead = document.getElementsByTagName('thead')[0]
-        // const tblBody = document.getElementsByTagName('tbody')[0]
-        // const tblFoot = document.getElementsByTagName('tfoot')[0]
-
-        // let headColumns = footColumns = ''
-
-        // headColumns += '<tr><th>STT</th><th>Hình</th><th colspan="2">Tên</th><th>Giá</th><th colspan="3">Số lượng</th></tr>'
-        // tblHead.innerHTML = headColumns
-
-        // let total = amountPaid = 0
-        // let no = 0
-
-        // if (checkItem(custommerCart) === -1) {
-        //     tblBody.innerHTML += '<tr><td class="no-item" colspan="6">Không tìm thấy sản phẩm</td></tr>'
-        // } else {
-        //     custommerCart.forEach(item => {
-        //         tblBody.innerHTML += '<tr><td>' + ++no + '</td><td><img class="img_order" src="' + item.urlImg + '" alt=""><p hidden>' + item.id + '</p></td><td colspan="2">' + item.name + '</td><td class="price">' + item.price + '</td><td class="text-center"><a href="#" onclick="deleteCart(this)">-</a></td><td class="text-center">' + item.quantity + '</td><td class="text-center"><a href="#" onclick="addCart(this)">+</a></td></tr>'
-        //         total += Number(item.quantity) * Number(item.price)
-        //     })
-        // }
-        // footColumns += '<tr><td colspan="4">Tổng cộng: </td><td class="price">' + total + '</td><td colspan="3" class="deleteAll"><a href="#" onclick="deleteAllCart(this)">Xóa tất cả</a></td></tr>'
-        // footColumns += '<tr><td colspan="4">Thuế VAT (10%): </td><td class="price">' + Math.floor(total * 0.1) + '</td><td rowspan="2" colspan="3"><button onclick="btn_order()" class="submit-order">Đặt Hàng</button></td></tr>'
-        // footColumns += '<tr><td colspan="4">Phải trả: </td><td class="price">' + Math.floor(1.1 * total) + '</td></tr>'
-
-        // tblFoot.innerHTML = footColumns
-        // many = total * 1.1
+        custommerCart.forEach(item => {
+            bodyCart.innerHTML += `<div class="cart__item">
+                                        <img class="cart_item-img" src="${item.urlImg}" alt="">
+                                        <div class="cart__item-info">
+                                            <p class="cart_item-title">${item.name}</p>
+                                            <p hidden>${item.id}</p>
+                                            <div class="cart_item-body">
+                                                <table class="table--item-body">
+                                                    <tr>
+                                                        <td>Đơn Giá:</td>
+                                                        <td class="price">${item.price}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Số Lượng: </td>
+                                                        <td class="cart-quantity">
+                                                            <a type="button" onclick="deleteCart(this)"><i class="fa-solid fa-minus"></i></a><span>${item.quantity}</span> <a type="button" onclick="addCart(this)"><i class="fa-solid fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thành Tiền: </td>
+                                                        <td class="price">${item.quantity * item.price}</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="cart_remove">
+                                            <a  type="button" onclick="deleteAllCart(this)"><i class="fa-regular fa-trash-can"></i></a>
+                                        </div>
+                                    </div>`
+            total += item.quantity * item.price
+        })
+        footerCart.innerHTML += `<p class="cart-total">Tổng tiền: <span class="price">${total}</span></p>
+                                    <a class="link_more btn" href="sanpham.html">Xem thêm sản phẩm</a>
+                                    <button class="btn_pay btn" onclick="btn_order()">Thanh toán</button>`
+        many = total
     }
+
 }
 
 //Kiểm tra xem trong Array còn Item nào không
@@ -197,7 +232,7 @@ const checkItem = (arr) => {
 
 //Giảm số lượng Item 
 const deleteCart = (evt) => {
-    let id = evt.parentElement.parentElement.children[1].textContent
+    let id = evt.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].textContent
     let find;
     updateCart.findIndex((element, index) => {
         if (element.id == id) find = index
@@ -217,7 +252,7 @@ const deleteCart = (evt) => {
 
 //Tăng số lượng Item 
 const addCart = (evt) => {
-    let id = evt.parentElement.parentElement.children[1].textContent
+    let id = evt.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].textContent
     console.log(id);
     let find;
     updateCart.findIndex((element, index) => {
@@ -237,9 +272,8 @@ const addCart = (evt) => {
 //Đặt hàng
 const btn_order = () => {
     let Cart = JSON.parse(localStorage.getItem('cartItems'), [])
-
     if (checkItem(Cart) !== -1) {
-        let says = confirm('Đặt Hàng?')
+        let says = confirm('Bạn muốn đặt hàng?')
         if (says) {
             many = Number(many).toLocaleString('de-DE', { style: 'currency', currency: 'VND' })
 
@@ -250,25 +284,22 @@ const btn_order = () => {
             localStorage.setItem('cartItems', JSON.stringify(Cart))
             window.location.reload()
         }
-    } else {
-        alert('Bạn chưa có sản phẩm trong giỏ hàng!')
-        location.href = "sanpham.html"
     }
 }
 
-//Xóa tất cả Item trong giỏ hàng
-const deleteAllCart = () => {
+//Xóa Item trong giỏ hàng
+const deleteAllCart = (evt) => {
     let Cart = JSON.parse(localStorage.getItem('cartItems'), [])
-    if (checkItem(Cart) !== -1) {
-        let says = confirm('Bạn muốn xóa tất cả??')
-        if (says) {
-            Cart = Cart.filter(item => {
-                return item.quantity < 0
-            })
-            localStorage.setItem('cartItems', JSON.stringify(Cart))
-            window.location.reload()
-        }
+    let id = evt.parentElement.parentElement.children[1].children[1].textContent
+    let says = confirm('Bạn muốn xóa sản phẩm này?')
+    if (says) {
+        Cart = Cart.filter(item => {
+            return item.id !== id
+        })
+        localStorage.setItem('cartItems', JSON.stringify(Cart))
+        window.location.reload()
     }
+
 }
 
 //Ẩn hiện thông tin chi tiết khi xem tin tức
