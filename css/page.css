@@ -156,7 +156,7 @@ nav #main-menu li a {
     display        : block;
     color          : aliceblue;
     text-decoration: none;
-    padding        : 17px 15px;
+    padding        : 17px 10px;
     justify-content: space-between;
     font-size      : 15px;
 }
@@ -344,8 +344,23 @@ nav #main-menu li:hover a {
     width: 100%;
 }
 
-/* reponsive */
-@media screen and (max-width: 860px) {
+.logolienhe a {
+    text-decoration: none;
+}
+
+
+/* tablet: width >= 740px and width < 1024px*/
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .main__search{
+        display: none;
+    }
+    .nav__mobie-list{
+        display: flex;
+    }
+}
+
+/* mobile < 740px */
+@media only screen and (max-width: 46.1875em) {
     #main-menu {
         flex-direction: column;
     }

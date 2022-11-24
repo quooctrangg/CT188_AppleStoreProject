@@ -3,7 +3,7 @@
 .main__login {
     background-color   : #3e3e3f;
     border             : 2px solid #989898;
-    border-radius      : 5px;
+    border-radius      : 10px;
     width              : 900px;
     margin             : 150px auto;
     display            : grid;

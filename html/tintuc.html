@@ -1,7 +1,7 @@
 <!-- Nguyen Quoc Trang B2012274 -->
 
 <!-- 
-    https://www.w3schools.com/
+    REF: https://www.w3schools.com/
  -->
 
 <!DOCTYPE html>
@@ -90,9 +90,10 @@
             </ul>
         </nav>
         <div class="main__search">
-            <form action="" class="search__box">
-                <input type="text" class="search__text" placeholder="Nhập nội dung cần tìm...">
-                <button class="search__btn">
+            <form action="timkiem.html" method="get" class="search__box">
+                <input id="value__text" type="text" class="search__text" placeholder="Nhập nội dung cần tìm..."
+                    onkeypress="return checkKeyEnter(event)">
+                <button type="button" class="search__btn" onclick="btn_search()">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>

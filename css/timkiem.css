@@ -1,0 +1,13 @@
+/* Nguyen Quoc Trang B2012274 */
+
+div {
+    text-align: center;
+}
+
+h2 {
+    font-size  : 30px;
+    margin     : 100px;
+    font-weight: 500;
+    color      : red;
+    font-style : italic;
+}

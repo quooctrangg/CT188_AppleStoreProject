@@ -1,9 +1,7 @@
 // Nguyen Quoc Trang B2012274
 // Nguyen Truong Nhut Truong B2012050
 
-//03-Vi du-CT188.pdf 
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript
-//https://www.w3schools.com/js/
+// REF: 03-Vi du-CT188.pdf, https://developer.mozilla.org/en-US/docs/Web/JavaScript, https://www.w3schools.com/js/, CT188-Mot so vi du bo SVGFEFuncGElement.dpf
 
 //Chỉnh sửa định dạng thành VND
 const priceItems = () => {
@@ -479,4 +477,33 @@ let btn_reg = () => {
         alert('Đăng ký thất bại. Vui lòng kiểm tra lại thông tin!')
         window.location.href = "dangky.html"
     }
+}
+
+//Kiểm tra ấn enter
+const checkKeyEnter = (e) => {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code === 13) {
+        btn_search()
+        return false
+    } else {
+        window.stop
+    }
+}
+
+//Kiểm tra có value khi ấn hay không
+const btn_search = () => {
+    const params = new URLSearchParams(location.search);
+    let valueText = document.getElementById('value__text')
+    let value = valueText.value
+    if (value.length) {
+        params.set('search', value)
+        window.location = `timkiem.html?${params.toString()}`
+    }
+}
+
+//Lấy giá trị tìm kiếm
+const getQuery = () => {
+    const params = new URL(window.location).searchParams
+    let search = params.get("search");
+    document.getElementsByClassName('search')[0].innerHTML = `<h2>Bạn đang tìm kiếm "${search}"`
 }

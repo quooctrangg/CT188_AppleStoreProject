@@ -1,21 +1,17 @@
 <!-- Nguyen Quoc Trang B2012274 -->
 
-<!-- 
-    REF: https://www.w3schools.com/, 03-Vi du-CT188.pdf 
- -->
-
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/page.css" />
-    <link rel="stylesheet" type="text/css" href="../css/giohang.css" />
+    <link rel="stylesheet" href="../css/timkiem.css">
     <link rel="SHORTCUT ICON   " href="../images/Apple-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Giỏ Hàng</title>
+    <title>Tìm kiếm</title>
 </head>
 
 <body class="page">
@@ -49,7 +45,7 @@
                 <li>
                     <a href="dangky.html" class="">Đăng Ký</a>
                 </li>
-                <li class="color_nav-click">
+                <li>
                     <a href="giohang.html" class="">Giỏ hàng</a>
                 </li>
             </ul>
@@ -83,7 +79,7 @@
                     <a href="dangky.html" class="nav_mobie-link">Đăng Ký</a>
                 </li>
                 <li>
-                    <a href="giohang.html" class="nav_mobie-link color_nav-click">Giỏ hàng</a>
+                    <a href="giohang.html" class="nav_mobie-link">Giỏ hàng</a>
                 </li>
             </ul>
         </nav>
@@ -98,12 +94,8 @@
         </div>
     </header>
     <main class="main">
-        <section class="container">
-            <h1 class="page__title"><a href="#">Giỏ Hàng</a></h1>
-            <div class="cart-heading"></div>
-            <div class="cart-body"></div>
-            <div class="cart-footer"></div>
-        </section>
+        <h1 class="page__title"><a href="#">TÌM KIẾM</a></h1>
+        <div class="search"></div>
     </main>
     <footer class="footer">
         <div class="lienhe">
@@ -134,14 +126,12 @@
                 </div>
             </div>
         </div>
-        <div class="top"><a href="#"><img src="../images/top.png" alt="TOP"></a></div>
     </footer>
 </body>
 
 <script src="../js/main.js"></script>
 <script>
-    window.addEventListener('load', showCart, false)
-    window.addEventListener('load', priceItems, false)
+    window.addEventListener('load', getQuery, false)
 </script>
 
 </html>

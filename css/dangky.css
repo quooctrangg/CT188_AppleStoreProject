@@ -4,6 +4,7 @@
     margin          : 150px;
     background-color: #3e3e3f;
     border          : 2px solid #989898;
+    border-radius   : 10px;
 }
 
 .page--background {
@@ -26,9 +27,7 @@ h2 {
 }
 
 #form {
-    padding      : 10px 40px;
-    border       : 1px solid black;
-    border-radius: 10px;
+    padding: 10px 40px;
 }
 
 .txt {
