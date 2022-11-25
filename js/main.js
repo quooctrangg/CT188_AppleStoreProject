@@ -486,7 +486,7 @@ const checkKeyEnter = (e) => {
         btn_search()
         return false
     } else {
-        window.stop
+        e.preventDefault()
     }
 }
 
